@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import pyttsx3 as pt3
 import webbrowser as brower
-import os
+import wikipedia
 
 def Login(password):
     exact_password = 789
@@ -15,6 +15,9 @@ def Speak(string):
     engine = pt3.init()
     engine.say(string)
     engine.runAndWait()
+
+def Search(Name):
+    return wikipedia.summary(Name)
     
 if __name__ == "__main__": 
     inp = int(input())
