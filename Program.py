@@ -17,6 +17,7 @@ def Speak(string):
     engine.runAndWait()
 
 def Search(Name):
+    # Do the input first in lower case then the captilize form because wikipedia unable to find the person
     return wikipedia.summary(Name)
     
 if __name__ == "__main__": 
