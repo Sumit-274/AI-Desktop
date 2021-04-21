@@ -1,26 +1,28 @@
-import speech_recognition as sr
-import pyttsx3 as pt3
-import webbrowser as brower
-import wikipedia
+import time
 
-def Login(password):
-    exact_password = 789
-    if password == exact_password:
-        print("Your Password is correct")
-    else:
-        return "Your Parpssword is incorrect"
-        exit()
+class Library:
 
-def Speak(string):
-    engine = pt3.init()
-    engine.say(string)
-    engine.runAndWait()
+    def __init__(self,Library_Name,Book_List):
+        self.Name = Library_Name
+        self.Books_List = []
+        self.Books_List.append(Book_List)
+        self.Lend_Book_History = {}
 
-def Search(Name):
-    # Do the input first in lower case then the captilize form because wikipedia unable to find the person
-    return wikipedia.summary(Name)
-    
-if __name__ == "__main__": 
-    inp = int(input())
-    Login(inp)
-    Speak("My name is sumit")
+    def Display_Book(self):
+        for item in self.Books_List:
+            print(item)
+
+    def Add_Book(self,Book_Name):
+        self.BookName = Book_Name
+        self.Books_List.append(self.BookName)
+        return f"Thank Mr/Mrs For Donating Book In Our {self.Name} Library"
+
+    def Lend_Book(self,Bookname,Bookowner):
+        self.Bookname = Bookname
+        self.Owner = Bookowner
+        self.Lend_Book_History.update({self.BookName:[self.Owner,time.asctime(time.localtime(time.time))]})
+        for item,time in self.Lend_Book_History.items():
+            pass
+        return "This book {} is Given to this person {} at {}".format(Bookname,time[0],time[1])
+
+Obj = Library()
