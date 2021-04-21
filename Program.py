@@ -10,12 +10,6 @@ def Login(password):
     else:
         return "Your Parpssword is incorrect"
         exit()
-
-def Speak(string):
-    engine = pt3.init()
-    word = string.lower()
-    engine.say(word)
-    engine.runAndWait()
     
 if __name__ == "__main__": 
     inp = int(input())
