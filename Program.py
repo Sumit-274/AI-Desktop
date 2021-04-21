@@ -13,5 +13,6 @@ def Login(password):
         return "Your Parpssword is incorrect"
         exit()
 
-inp = int(input())
-Login(inp)
+if __name__ == "__main__": 
+    inp = int(input())
+    Login(inp)
