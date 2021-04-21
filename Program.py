@@ -10,7 +10,7 @@ def Login(password):
         while True:
             pass
     else:
-        return "Your Password is incorrect"
+        return "Your Parpssword is incorrect"
         exit()
 
 inp = int(input())
